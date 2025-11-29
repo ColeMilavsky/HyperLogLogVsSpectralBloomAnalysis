@@ -1,0 +1,3 @@
+Note that hyperloglog_results_1 and hyperloglog_results_2 were run with an incorrect get_leftmost_1bit function that found position from
+lsb not msb, results should be IGNORED from these two outputs
+

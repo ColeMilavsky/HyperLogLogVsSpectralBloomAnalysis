@@ -2,7 +2,6 @@
 
 from algorithms.hyperLogLog import hyperloglog_estimate
 from algorithms.SpectralBloomFilter import spectral_bloom_filter_estimate
-from analysis.dataAnalysis import analyze_results
 
 def main():
     # Grab dataset from data/raw/dataset.txt
@@ -16,6 +15,3 @@ def main():
     # Spectral Bloom Filter estimation
     sbf_estimate = spectral_bloom_filter_estimate(dataset, size=1024, num_hashes=3)
     print(f"Spectral Bloom Filter Estimate: {sbf_estimate}")
-    
-    # Analyze results
-    analyze_results(hll_estimate, sbf_estimate, len(set(dataset)))

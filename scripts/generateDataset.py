@@ -39,17 +39,29 @@ def generate_dataset(num_elements, unique_ratio=0.8):
     return dataset
 
 def main():
-    num_elements = 1000000
-    dataset = generate_dataset(num_elements)
+    # Create three datasets of varying sizes
+    num_elements_1m = 1000000
+    num_elements_10m = 10000000
+    num_elements_100m = 100000000
+
+    dataset_1m = generate_dataset(num_elements_1m)
+    dataset_10m = generate_dataset(num_elements_10m)
+    dataset_100m = generate_dataset(num_elements_100m)
 
     # Path to Data Directory
     current_directory = os.getcwd()
     parent_directory = os.path.dirname(current_directory)
-    data_directory = os.path.join(parent_directory, "HyperLogLogVsSpectralBloomAnalysis/HyperLogLogVsSpectralBloomAnalysis/data/raw")
+    data_directory = os.path.join(parent_directory, "HyperLogLogVsSpectralBloomAnalysis/data/raw")
     
     # Save to file
-    with open(os.path.join(data_directory, "dataset.txt"), "w") as f:
-        for element in dataset:
+    with open(os.path.join(data_directory, "dataset_1m.txt"), "w") as f:
+        for element in dataset_1m:
+            f.write(f"{element}\n")
+    with open(os.path.join(data_directory, "dataset_10m.txt"), "w") as f:
+        for element in dataset_10m:
+            f.write(f"{element}\n")
+    with open(os.path.join(data_directory, "dataset_100m.txt"), "w") as f:
+        for element in dataset_100m:
             f.write(f"{element}\n")
 
 if __name__ == "__main__":

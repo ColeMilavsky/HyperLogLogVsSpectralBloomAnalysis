@@ -1,0 +1,15 @@
+# Ignore large raw dataset files
+data/raw/dataset_100m.txt
+data/raw/dataset_10m.txt
+
+# Optional: ignore all processed Excel files (they can be regenerated)
+data/processed/*.xlsx
+
+# Python cache
+__pycache__/
+*.pyc
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
